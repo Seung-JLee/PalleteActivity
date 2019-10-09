@@ -2,6 +2,7 @@ package edu.temple.palleteactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -26,8 +27,9 @@ public class PalleteActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 CustomAdapter clickedItem = (CustomAdapter) adapterView.getItemAtPosition(i);
-
-
+                Intent launchIntent = new Intent(PalleteActivity.this, CanvasActivity.class);
+                launchIntent.putExtra("BackgroundColor", colors[i]);
+                startActivity(launchIntent);
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView){
