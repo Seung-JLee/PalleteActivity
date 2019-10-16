@@ -15,12 +15,11 @@ public class CanvasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
 
-
-
         String BackgroundColor = getIntent().getStringExtra("BackgroundColor");
         if(BackgroundColor != null) {
             View someView = findViewById(R.id.backGround);
             View root = someView.getRootView();
+
             root.setBackgroundColor(Color.parseColor(BackgroundColor));
 
         }

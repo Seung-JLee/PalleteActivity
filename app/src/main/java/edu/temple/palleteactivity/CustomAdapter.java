@@ -1,6 +1,7 @@
 package edu.temple.palleteactivity;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ public class CustomAdapter extends BaseAdapter {
     Context context;
     String[] colors;
     LayoutInflater linflater;
+
 
     public CustomAdapter(Context appcontext, String[] colors) {
         this.context = appcontext;
@@ -47,7 +49,7 @@ public class CustomAdapter extends BaseAdapter {
         TextView colornames = (TextView) view.findViewById(R.id.textView);
         colornames.setText(colors[position]);
 
-        if(colors[position].equals("WHITE")){
+        /*if(colors[position].equals("WHITE")){
             colornames.setBackgroundColor(Color.parseColor("WHITE"));
         }
         else if(colors[position].equals("RED")){
@@ -61,6 +63,21 @@ public class CustomAdapter extends BaseAdapter {
         }
         else if(colors[position].equals("BLUE")){
             colornames.setBackgroundColor(Color.parseColor("BLUE"));
+        }*/
+        if(position == 0) {
+            colornames.setBackgroundColor(Color.parseColor("RED"));
+        }
+        else if(position == 1) {
+            colornames.setBackgroundColor(Color.parseColor("BLUE"));
+        }
+        else if(position == 2) {
+            colornames.setBackgroundColor(Color.parseColor("YELLOW"));
+        }
+        else if(position == 3 ) {
+            colornames.setBackgroundColor(Color.parseColor("WHITE"));
+        }
+        else if(position == 4) {
+            colornames.setBackgroundColor(Color.parseColor("GREEN"));
         }
         return view;
     }
