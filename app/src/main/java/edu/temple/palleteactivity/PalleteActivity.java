@@ -13,6 +13,7 @@ import android.widget.Spinner;
 public class PalleteActivity extends AppCompatActivity {
 
     String[] colors = {"WHITE", "RED", "YELLOW", "GREEN", "BLUE"};
+    String SelectedItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,13 @@ public class PalleteActivity extends AppCompatActivity {
         colorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                int j = 0;
                 CustomAdapter clickedItem = (CustomAdapter) adapterView.getItemAtPosition(i);
                 Intent launchIntent = new Intent(PalleteActivity.this, CanvasActivity.class);
                 launchIntent.putExtra("BackgroundColor", colors[i]);
                 startActivity(launchIntent);
+
+
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView){

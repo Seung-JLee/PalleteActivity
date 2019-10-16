@@ -46,6 +46,7 @@ public class CustomAdapter extends BaseAdapter {
         view = linflater.inflate(R.layout.adapter_custom, null);
         TextView colornames = (TextView) view.findViewById(R.id.textView);
         colornames.setText(colors[position]);
+
         if(colors[position].equals("WHITE")){
             colornames.setBackgroundColor(Color.parseColor("WHITE"));
         }
